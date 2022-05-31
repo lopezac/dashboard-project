@@ -23,6 +23,67 @@ body, html {
 .navbar {
     background-color: var(--light-color);
     grid-area: 1 / 2 / 2 / 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px; /* Play with it later */
+    padding: 0 60px 0 40px;
+}
+
+.navbar > * {
+    background-color: var(--gray-color);
+}
+
+.navbar .top-nav {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .top-nav > div {
+    display: flex;
+    column-gap: 20px;
+}
+
+.top-nav > div > input {
+    flex: 1;
+}
+
+.navbar .bottom-nav {
+    display: flex;
+}
+
+.navbar .bottom-nav div:first-child {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom-nav div > * {
+    margin: 0;
+}
+
+.bottom-nav div > p:nth-child(2) {
+    align-self: flex-end;
+}
+
+.bottom-nav div > p:nth-child(3) {
+    align-self: flex-start;
+}
+
+.navbar .bottom-nav .profile-img {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.navbar .bottom-nav .buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
 }
 
 .home {
