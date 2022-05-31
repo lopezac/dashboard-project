@@ -1,0 +1,68 @@
+:root {
+    --light-color: rgba(0, 0, 0, 0.1);
+    --gray-color: rgba(0, 0, 0, 0.2);
+    --dark-color: rgba(0, 0, 0, 0.3);
+}
+
+body, html {
+    height: 100%;
+    /* margin: 0; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    height: 100%;
+}
+
+.navbar {
+    background-color: var(--light-color);
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.home {
+    background-color: var(--gray-color);
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.sidebar {
+    background-color: var(--dark-color);
+
+    grid-area: 1 / 1 / 3 / 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 35px; /* Later try to use vw or vh to make it responsive*/
+}
+
+.sidebar > * {
+    background-color: var(--light-color);
+    padding-left: 25px;
+}
+
+.title > * {
+    background-color: var(--light-color);
+}
+
+.title,
+.sidebar ul > li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 25px;
+}
+
+.sidebar ul {
+    padding: 0;
+    display: grid;
+    gap: 20px;
+}
+
+.sidebar ul > li {
+    background-color: var(--light-color);
+    list-style-type: none;
+}
