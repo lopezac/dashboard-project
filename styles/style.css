@@ -13,6 +13,10 @@ body, html {
     box-sizing: border-box;
 }
 
+li {
+    list-style-type: none;
+}
+
 .main {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -88,7 +92,127 @@ body, html {
 
 .home {
     background-color: var(--gray-color);
+
     grid-area: 2 / 2 / 3 / 3;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    /* padding: 40px 30px 60px 20px; */
+}
+
+.home > section {
+    background-color: var(--dark-color);
+}
+
+.home > section > div {
+    background-color: var(--light-color);
+}
+
+.home > .projects-cont {
+    grid-area: 1 / 1 / 3 / 2;
+    padding: 0 0 0 20px;
+}
+
+.home > .projects-cont > h2 {
+    margin: 25px 0 10px 0;
+}
+
+.home > .projects-cont > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.projects-cont > div > * {
+    background-color: var(--light-color);
+    /* width: 200px; */
+    height: 200px;
+}
+
+.projects > .project {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    padding: 25px;
+}
+
+.projects > .project > .proj-title {
+    margin: 10px 0 0 0;
+}
+
+.projects > .project > p {
+    margin: 8px 0 0 0;
+}
+
+.projects > .project > .proj-icons {
+    display: flex;
+    column-gap: 35px;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.home > .announcement-cont {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.announcement-cont .announcement {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 20px;
+}
+
+.announcement-cont .announcement article {
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.announcement-cont .announcement article:last-child {
+    border: none;
+}
+
+.announcement article > h4 {
+    margin: 15px 0 0 0;
+    /* font-size: 1rem; */
+}
+
+.announcement article > p {
+    margin-top: 3px;
+    /* font-size: 0.9rem; */
+}
+
+.home > .trending-cont {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.home > .trending-cont > .trending {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+    padding: 30px;
+}
+
+.trending-cont .trending article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "img user"
+                         "img descr";
+    column-gap: 25px;
+}
+
+.trending article .img {
+    grid-area: img;
+}
+
+.trending article .user {
+    grid-area: user;
+    margin:0;
+}
+
+.trending article .description {
+    grid-area: descr;
+    margin:0;
 }
 
 .sidebar {
@@ -98,7 +222,7 @@ body, html {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
-    gap: 35px; /* Later try to use vw or vh to make it responsive*/
+    gap: 40px; /* Later try to use vw or vh to make it responsive*/
 }
 
 .sidebar > * {
@@ -125,5 +249,4 @@ body, html {
 
 .sidebar ul > li {
     background-color: var(--light-color);
-    list-style-type: none;
 }
