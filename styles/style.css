@@ -1,12 +1,24 @@
+@font-face {
+    font-family: "Lato";
+    src: url('../fonts/Ubuntu-Regular.woff') format("woff");
+}
+
+
 :root {
     --light-color: rgba(0, 0, 0, 0.1);
     --gray-color: rgba(0, 0, 0, 0.2);
     --dark-color: rgba(0, 0, 0, 0.3);
+    --green-color: #14532d;
+    --indigo-color: #DDD6FE;
+    --orange-color: #fb923c;
+    --lgray-color: #636363;
+    --rose-color: #BE123C;
 }
 
 body, html {
     height: 100%;
     /* margin: 0; */
+    font-family: Lato;
 }
 
 * {
@@ -25,16 +37,16 @@ li {
 }
 
 .navbar {
-    background-color: var(--light-color);
+    background-color: white;
     grid-area: 1 / 2 / 2 / 3;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 30px; /* Play with it later */
-    padding: 0 60px 0 40px;
+    gap: 10px;
+    padding: 5px 60px 20px 40px;
 }
 
 .navbar > * {
-    background-color: var(--gray-color);
+    /* background-color: var(--gray-color); */
 }
 
 .navbar .top-nav {
@@ -50,32 +62,44 @@ li {
     column-gap: 20px;
 }
 
+.navbar .top-nav > div .user-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
 .top-nav > div > input {
     flex: 1;
+    background-color: var(--indigo-color);
+    border: none;
+    height: 30px;
+    border-radius: 25px;
 }
 
 .navbar .bottom-nav {
     display: flex;
 }
 
-.navbar .bottom-nav div:first-child {
+.navbar .bottom-nav .user-profile {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
     /* justify-content: center; */
     align-items: center;
     gap: 10px;
+    font-weight: bold;
 }
 
-.bottom-nav div > * {
+.bottom-nav .user-profile > * {
     margin: 0;
 }
 
-.bottom-nav div > p:nth-child(2) {
+.bottom-nav .user-profile > p:nth-child(2) {
     align-self: flex-end;
+    font-size: 0.9rem;
 }
 
-.bottom-nav div > p:nth-child(3) {
+.bottom-nav .user-profile > p:nth-child(3) {
+    font-size: 1.3rem;
     align-self: flex-start;
 }
 
@@ -90,58 +114,69 @@ li {
     column-gap: 30px;
 }
 
+.bottom-nav .buttons button {
+    background-color: var(--green-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
 .home {
-    background-color: var(--gray-color);
+    background-color: var(--indigo-color);
 
     grid-area: 2 / 2 / 3 / 3;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 30px;
-    /* padding: 40px 30px 60px 20px; */
+    padding: 0 30px 0 20px;
 }
 
-.home > section {
-    background-color: var(--dark-color);
-}
-
-.home > section > div {
-    background-color: var(--light-color);
-}
 
 .home > .projects-cont {
     grid-area: 1 / 1 / 3 / 2;
-    padding: 0 0 0 20px;
+    /* padding: 0 0 0 20px; */
 }
 
+
+.home > .announcement-cont > h2,
 .home > .projects-cont > h2 {
-    margin: 25px 0 10px 0;
+    margin-top: 25px;
 }
 
-.home > .projects-cont > div {
+.home > section > h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.home > .projects-cont > .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    /* margin-bottom: 50px; */
 }
 
-.projects-cont > div > * {
-    background-color: var(--light-color);
-    /* width: 200px; */
-    height: 200px;
-}
-
-.projects > .project {
+.projects-cont > .projects > .project {
+    background-color: white;
+    height: 225px;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     padding: 25px;
+    border-left: 8px solid var(--rose-color);
+    border-radius: 10px;
 }
 
 .projects > .project > .proj-title {
     margin: 10px 0 0 0;
+    font-size: 1.3rem;
 }
 
 .projects > .project > p {
-    margin: 8px 0 0 0;
+    margin: 3px 0 0 0;
+    font-size: 1rem;
+    color: var(--lgray-color);
 }
 
 .projects > .project > .proj-icons {
@@ -156,6 +191,7 @@ li {
 }
 
 .announcement-cont .announcement {
+    background-color: white;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     padding: 20px;
@@ -170,15 +206,23 @@ li {
 .announcement-cont .announcement article:last-child {
     border: none;
 }
+.announcement article:first-child h4 {
+    margin-top: 10px;
+}
 
 .announcement article > h4 {
     margin: 15px 0 0 0;
-    /* font-size: 1rem; */
+    font-size: 1rem;
 }
 
 .announcement article > p {
     margin-top: 3px;
-    /* font-size: 0.9rem; */
+    font-size: 0.9rem;
+    color: var(--lgray-color);
+}
+
+.trending-cont h2 {
+    margin: 0 0 10px 0;
 }
 
 .home > .trending-cont {
@@ -186,10 +230,11 @@ li {
 }
 
 .home > .trending-cont > .trending {
+    background-color: white;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    gap: 30px;
-    padding: 30px;
+    gap: 25px;
+    padding: 20px;
 }
 
 .trending-cont .trending article {
@@ -207,7 +252,7 @@ li {
 
 .trending article .user {
     grid-area: user;
-    margin:0;
+    margin  :0;
 }
 
 .trending article .description {
@@ -216,37 +261,36 @@ li {
 }
 
 .sidebar {
-    background-color: var(--dark-color);
+    background-color: var(--green-color);
+    color: white;
 
     grid-area: 1 / 1 / 3 / 2;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
-    gap: 40px; /* Later try to use vw or vh to make it responsive*/
+    gap: 30px; /* Later try to use vw or vh to make it responsive*/
 }
 
 .sidebar > * {
-    background-color: var(--light-color);
     padding-left: 25px;
 }
 
-.title > * {
-    background-color: var(--light-color);
-}
-
-.title,
+.title > p,
 .sidebar ul > li {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.title > p {
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .sidebar ul {
     padding: 0;
     display: grid;
     gap: 20px;
-}
-
-.sidebar ul > li {
-    background-color: var(--light-color);
 }
