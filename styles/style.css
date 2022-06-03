@@ -12,12 +12,11 @@
     --indigo-color: #DDD6FE;
     --orange-color: #fb923c;
     --lgray-color: #636363;
-    --rose-color: #BE123C;
+    --lime-color: #b0d353;
 }
 
 body, html {
     height: 100%;
-    /* margin: 0; */
     font-family: Lato;
 }
 
@@ -61,7 +60,6 @@ li {
 .navbar .top-nav > div .user-name {
     font-size: 1.1rem;
     font-weight: bold;
-    /* flex: 1 0 auto; */
     width: 130px;
 }
 
@@ -81,7 +79,6 @@ li {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
-    /* justify-content: center; */
     align-items: center;
     column-gap: 10px;
     font-weight: bold;
@@ -148,7 +145,6 @@ li {
 
 .home > .projects-cont {
     grid-area: 1 / 1 / 3 / 2;
-    /* padding: 0 0 0 20px; */
 }
 
 
@@ -166,7 +162,6 @@ li {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    /* margin-bottom: 50px; */
 }
 
 .projects-cont > .projects > .project {
@@ -175,7 +170,7 @@ li {
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     padding: 25px;
-    border-left: 8px solid var(--rose-color);
+    border-left: 8px solid var(--lime-color);
 }
 
 .announcement-cont .announcement,
@@ -303,7 +298,7 @@ li {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
-    gap: 30px; /* Later try to use vw or vh to make it responsive*/
+    gap: 30px;
 }
 
 .sidebar > * {
